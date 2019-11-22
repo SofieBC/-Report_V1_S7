@@ -1,5 +1,6 @@
 package HotelApp;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Booking {
@@ -8,7 +9,7 @@ public class Booking {
     private Date checkOutDate;
     private double totalPrice;
 
-    public Booking(int bookingId, Date checkInDate) {
+    public Booking(int bookingId, Date checkInDate , ArrayList<Room> rooms) {
         this.bookingId = bookingId;
         this.checkInDate = checkInDate;
     }
