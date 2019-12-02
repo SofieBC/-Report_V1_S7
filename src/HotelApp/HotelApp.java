@@ -1,7 +1,20 @@
 package HotelApp;
 
+import java.util.Scanner;
+
 public class HotelApp {
+
     private Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        HotelApp myApp = new HotelApp();
+        HotelLogic logic = new HotelLogic();
+
+        Room room1 = new Room(1,2,true, 50);
+        logic.checkInCustomer("555555-555", true);
+        logic.roomList.add(room1);
+
+        //Booking book = new Booking(1,2019-12-01, logic.roomList);
 
     public void runProgram() {
         boolean running = true;
@@ -38,15 +51,15 @@ public class HotelApp {
 
                 Customer customer1 = new Customer("55555", "kalle", "hejvägen12", "07777");
 
-                myApp.printMenu();
+
             }
 
 
         }
-
     }
 
     public int printMenu() {
+        Scanner input = new Scanner(System.in);
         System.out.println("*______ Welcome ______*");
         System.out.println("| 1) Add booking      |");
         System.out.println("| 2) Cancel booking   |");
