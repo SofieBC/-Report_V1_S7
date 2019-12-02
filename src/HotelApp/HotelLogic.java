@@ -3,13 +3,23 @@ package HotelApp;
 import java.util.ArrayList;
 
 public class HotelLogic {
+
     ArrayList<Room> roomList = new ArrayList<Room>();
     ArrayList<Customer> customerList = new ArrayList<Customer>();
 
+    public void getCustomer() {
+        Customer customer1 = new Customer ("555", "Kalle", "hov 12", "0755555");
+        Customer customer2 = new Customer ("444", "Johanna" , "Hotellv 23", "0708486321");
+        Customer customer3 = new Customer ("333", "Adam", "Kristianstadv 1", "0722484848");
+        Customer customer4 = new Customer ("222", "Adina", "Lundav 487", "0732554620");
 
 
-    public Customer getCustomer(Customer ssn) {
-        return ssn;
+        customerList.add(customer1);
+        customerList.add(customer2);
+        customerList.add(customer3);
+        customerList.add(customer4);
+
+        System.out.println(customerList);
     }
 
     public ArrayList<Customer> getCustomers() {
