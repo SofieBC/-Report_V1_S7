@@ -17,4 +17,31 @@ public class Room {
     public int getRoomNumber() {
         return roomNumber;
     }
+
+    public int getNumberOfBeds() {
+        return numberOfBeds;
+    }
+
+    public boolean isHasBalcony() {
+        return hasBalcony;
+    }
+
+    public double getPricePerNight() {
+        return pricePerNight;
+    }
+
+    public boolean isBooked() {
+        return isBooked;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "roomNumber=" + roomNumber +
+                ", numberOfBeds=" + numberOfBeds +
+                ", hasBalcony=" + hasBalcony +
+                ", pricePerNight=" + pricePerNight +
+                ", isBooked=" + isBooked +
+                '}';
+    }
 }

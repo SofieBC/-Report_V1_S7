@@ -3,8 +3,11 @@ package HotelApp;
 import java.util.ArrayList;
 
 public class HotelLogic {
-    private ArrayList<Room> roomList = new ArrayList<Room>();
-    private ArrayList<Customer> customerList = new ArrayList<Customer>();
+    ArrayList<Room> roomList = new ArrayList<Room>();
+    ArrayList<Customer> customerList = new ArrayList<Customer>();
+
+
+
 
     public Customer getCustomer(Customer ssn) {
         return ssn;
@@ -16,6 +19,7 @@ public class HotelLogic {
     }
 
     public Room getRoom(int roomNumber) {
+
         return null;
     }
 
@@ -29,6 +33,7 @@ public class HotelLogic {
     }
 
     public boolean addRoom(Room room) {
+
         return true;
     }
 
@@ -38,5 +43,13 @@ public class HotelLogic {
 
     public boolean checkOutCustomer(String ssn, int bookingId) {
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return "HotelLogic{" +
+                "roomList=" + roomList +
+                ", customerList=" + customerList +
+                '}';
     }
 }
