@@ -16,6 +16,8 @@ public class HotelApp {
         logic.roomList.add(room1);
 
         //Booking book = new Booking(1,2019-12-01, logic.roomList);
+        myApp.runProgram();
+
     }
 
     public void runProgram() {
@@ -28,15 +30,17 @@ public class HotelApp {
                     break;
                 case 2:
                     //Method
-                    break;
+
                 case 3:
                     //Method
-                    break;
+
                 case 4:
                     //Method
-                    break;
+
                 case 5:
-                    ;
+                    //Method
+                    break;
+                case 6:
                     running = false;
                     System.out.println("Thank you for using the services");
                     break;
@@ -45,14 +49,13 @@ public class HotelApp {
                     break;
             }
 
-
         }
 
     }
 
     public int printMenu() {
 
-        Scanner input = new Scanner(System.in);
+
         System.out.println("*______ Welcome ______*");
         System.out.println("| 1) Add booking      |");
         System.out.println("| 2) Cancel booking   |");
