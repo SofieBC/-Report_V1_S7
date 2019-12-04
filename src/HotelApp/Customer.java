@@ -35,7 +35,7 @@ public class Customer {
         return name;
     }
 
-    public String getAdress() {
+    public String getAddress() {
         return address;
     }
 
