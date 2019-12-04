@@ -5,22 +5,22 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Booking {
-    private int bookingId;
-    private LocalDate checkInDate;
+    private int bookingId = 0;
+    private Date checkInDate;
     private Date checkOutDate;
     private double totalPrice;
 
-    public Booking(int bookingId, LocalDate checkInDate , ArrayList<Room> roomList) {
+    public Booking(int bookingId, Date checkInDate, ArrayList<Room> roomList) {
         this.bookingId = bookingId;
         this.checkInDate = checkInDate;
     }
 
-    public int getBookingId() {
+    public int getBookingId(int bookingId) {
+        bookingId += 1;
         return bookingId;
     }
 
-    public LocalDate getCheckInDate() {
-        LocalDate checkInDate = LocalDate.parse("");
+    public Date getCheckInDate() {
         return checkInDate;
     }
 

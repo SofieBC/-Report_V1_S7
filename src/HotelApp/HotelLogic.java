@@ -6,7 +6,19 @@ public class HotelLogic {
 
     ArrayList<Room> roomList = new ArrayList<Room>();
     ArrayList<Customer> customerList = new ArrayList<Customer>();
+    ArrayList<Booking> bookingList = new ArrayList();
 
+
+    public void getRooms (){
+
+        Room room1 = new Room(1, 2, true, 50);
+        Room room2 = new Room(2, 2, false, 50);
+
+        roomList.add(room1);
+        roomList.add(room2);
+
+        System.out.println(roomList);
+    }
     public void getCustomer() {
         Customer customer1 = new Customer ("555", "Kalle", "hov 12", "0755555");
         Customer customer2 = new Customer ("444", "Johanna" , "Hotellv 23", "0708486321");
@@ -22,13 +34,8 @@ public class HotelLogic {
         System.out.println(customerList);
     }
 
-    public ArrayList<Customer> getCustomers() {
-        ArrayList<Customer> customers = null;
-        return null;
-    }
 
     public Room getRoom(int roomNumber) {
-
         return null;
     }
 
@@ -42,12 +49,15 @@ public class HotelLogic {
     }
 
     public boolean addRoom(Room room) {
-
         return true;
     }
 
-    public boolean checkInCustomer(String ssn, boolean booking) {
-        return true;
+    public void checkInCustomer() {
+        for(Customer customer : customerList){
+            if (customer.getSsn().equals("555")){
+                //System.out.println(customer.getSsn("555"));
+            }
+        }
     }
 
     public boolean checkOutCustomer(String ssn, int bookingId) {

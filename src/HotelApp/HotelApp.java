@@ -9,14 +9,23 @@ public class HotelApp {
     public static void main(String[] args) {
         HotelApp myApp = new HotelApp();
         HotelLogic logic = new HotelLogic();
+
+
+        logic.getCustomer();
+        logic.getRooms();
+        myApp.runProgram();
+
         logic.getCustomer();
 
         Room room1 = new Room(1, 2, true, 50);
-        logic.checkInCustomer("555555-555", true);
+        //logic.checkInCustomer("555555-555", true);
         logic.roomList.add(room1);
 
         //Booking book = new Booking(1,2019-12-01, logic.roomList);
+<<<<<<< HEAD
         myApp.runProgram();
+=======
+>>>>>>> 17c451e0965c60b93488e4b341fa49f18d100d8f
 
     }
 
@@ -38,7 +47,11 @@ public class HotelApp {
                     //Method
 
                 case 5:
+<<<<<<< HEAD
                     //Method
+=======
+
+>>>>>>> 17c451e0965c60b93488e4b341fa49f18d100d8f
                     break;
                 case 6:
                     running = false;
@@ -48,9 +61,11 @@ public class HotelApp {
                     System.out.println("Enter a proper value");
                     break;
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 17c451e0965c60b93488e4b341fa49f18d100d8f
         }
-
     }
 
     public int printMenu() {
@@ -67,8 +82,7 @@ public class HotelApp {
         int userInput = input.nextInt();
         input.nextLine();
         return userInput;
-
     }
-
 }
+
 
