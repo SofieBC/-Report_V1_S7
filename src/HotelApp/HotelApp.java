@@ -10,9 +10,19 @@ public class HotelApp {
         HotelApp myApp = new HotelApp();
         HotelLogic logic = new HotelLogic();
 
+
         logic.getCustomer();
         logic.getRooms();
         myApp.runProgram();
+
+        logic.getCustomer();
+
+        Room room1 = new Room(1, 2, true, 50);
+        //logic.checkInCustomer("555555-555", true);
+        logic.roomList.add(room1);
+
+        //Booking book = new Booking(1,2019-12-01, logic.roomList);
+
     }
 
     public void runProgram() {
@@ -24,7 +34,7 @@ public class HotelApp {
                     //Method
                     break;
                 case 2:
-                    //Metod
+                    //Method
                     break;
                 case 3:
                     //Method
@@ -33,6 +43,7 @@ public class HotelApp {
                     //Method
                     break;
                 case 5:
+
                     break;
                 case 6:
                     running = false;
