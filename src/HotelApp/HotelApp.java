@@ -10,24 +10,12 @@ public class HotelApp {
         HotelApp myApp = new HotelApp();
         HotelLogic logic = new HotelLogic();
 
-        logic.checkInCustomer("555555-555", true);
-
-        Customer customer1 = new Customer("55555", "kalle", "hejvägen12", "07777");
-
         logic.getCustomer();
+        logic.getRooms();
+        myApp.runProgram();
+    }
 
-        Room room1 = new Room(1, 2, true, 50);
-        logic.checkInCustomer("555555-555", true);
-        logic.roomList.add(room1);
-
-        //Booking book = new Booking(1,2019-12-01, logic.roomList);
-
-       /* public void runProgram () {
-            boolean running = true;
-            while (running) {
-                int userMenuChoice = printMenu();
-=======
-    /*  public void runProgram() {
+    public void runProgram() {
         boolean running = true;
         while (running) {
             int userMenuChoice = printMenu();
@@ -44,78 +32,19 @@ public class HotelApp {
                 case 4:
                     //Method
                     break;
-                case 5
-                    ;
+                case 5:
+                    break;
+                case 6:
                     running = false;
                     System.out.println("Thank you for using the services");
                     break;
                 default:
                     System.out.println("Enter a proper value");
                     break;
-            }*/
-
-       /* public void runProgram () {
-            boolean running = true;
-            while (running) {
-                int userMenuChoice = printMenu ();
->>>>>>> f297b1391432c9e9835f728edfb0bc838bd227e6
-                switch (userMenuChoice) {
-                    case 1:
-                        //Method
-                        break;
-                    case 2:
-                        //Metod
-                        break;
-                    case 3:
-                        //Method
-                        break;
-                    case 4:
-                        //Method
-                        break;
-                    case 5
-                        ;
-                        running = false;
-<<<<<<< HEAD
-                        System.out.println("Thank you for using the services");
-                        break;
-                    default:
-                        System.out.println("Enter a proper value");
-                        break;
-                }
-            }*/
-    }
-
-   /* public int printMenu() {
-=======
-                        System.out.println ("Thank you for using the services");
-                        break;
-                    default:
-                        System.out.println ("Enter a proper value");
-                        break;
-                }
-
-
-<<<<<<< HEAD
-
             }
-
-
         }
     }
 
-    public int printMenu() {
-=======
-                HotelApp myApp = new HotelApp ();
-                HotelLogic logic = new HotelLogic ();
-                logic.checkInCustomer ("555555-555", true);
-
-                Customer customer1 = new Customer ("55555", "kalle", "hejvägen12", "07777");
-
-                myApp.printMenu ();
-            }
-
-
-        }*/
     public int printMenu() {
 
         Scanner input = new Scanner(System.in);
