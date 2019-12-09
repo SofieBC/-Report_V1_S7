@@ -18,16 +18,4 @@ public class Booking {
         bookingId += 1;
         return bookingId;
     }
-
-    public Date getCheckInDate() {
-        return checkInDate;
-    }
-
-    public Date getCheckOutDate() {
-        return checkOutDate;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
 }

@@ -10,12 +10,12 @@ public class HotelApp {
         HotelApp myApp = new HotelApp();
         HotelLogic logic = new HotelLogic();
 
-
         logic.getCustomer();
         logic.getRooms();
         myApp.runProgram();
 
         logic.getCustomer();
+
 
         Room room1 = new Room(1, 2, true, 50);
         //logic.checkInCustomer("555555-555", true);
@@ -35,7 +35,7 @@ public class HotelApp {
             int userMenuChoice = printMenu();
             switch (userMenuChoice) {
                 case 1:
-                    //Method
+                    //Metod
                     break;
                 case 2:
                     //Method

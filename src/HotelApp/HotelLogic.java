@@ -39,9 +39,14 @@ public class HotelLogic {
         return null;
     }
 
-    public ArrayList<Room> getAvailableRooms() {
-        ArrayList<Room> availableRooms = null;
-        return null;
+    public void getAvailableRooms() {
+        getRooms();
+        ArrayList<Room> availableRooms = new ArrayList<>();
+        for(Room room : roomList){
+            if(!room.isBooked()){
+                availableRooms.add(room);
+            }
+        }
     }
 
     public boolean addCustomer(Customer customer) {
