@@ -78,6 +78,7 @@ public class HotelApp {
         input.nextLine();
         return userInput;
     }
+
 }
 
 
