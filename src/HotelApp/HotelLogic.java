@@ -40,14 +40,13 @@ public class HotelLogic {
     }
 
     public void getAvailableRooms() {
-        getRooms();
-        ArrayList<Room> availableRooms = new ArrayList<>();
-        for(Room room : roomList){
-            if(!room.isBooked()){
-                availableRooms.add(room);
+        for (Room room : roomList) {
+            if (!room.isBooked()) {
+                System.out.println(room);
             }
         }
     }
+
 
     public boolean addCustomer(Customer customer) {
         return true;
