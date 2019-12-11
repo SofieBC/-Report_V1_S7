@@ -5,10 +5,13 @@ import java.util.Scanner;
 public class HotelApp {
 
     private Scanner input = new Scanner(System.in);
+    private Object HotelApp;
 
     public static void main(String[] args) throws Exception {
         HotelApp myApp = new HotelApp();
         HotelLogic logic = new HotelLogic();
+
+
 
         handleLogin(myApp, logic);
     }
@@ -67,6 +70,7 @@ public class HotelApp {
                     break;
                 case 2:
                     //Method
+                    logic.bookRoom ();
                     break;
                 case 3:
                     //Method
@@ -117,7 +121,7 @@ public class HotelApp {
                     //Method
                     break;
                 case 2:
-                    //Method
+                    logic.bookRoom();
                     break;
                 case 3:
                     //Method
@@ -137,6 +141,7 @@ public class HotelApp {
                     break;
             }
 
+                //HotelApp[roomNumber].setName(roomName);
         }
     }
 
@@ -152,6 +157,8 @@ public class HotelApp {
         input.nextLine();
         return userInput;
     }
+
+
 }
 
 
