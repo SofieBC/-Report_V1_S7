@@ -84,6 +84,9 @@ public class HotelApp {
                     //Method
                     break;
                 case 6:
+                    //metod för edit bookings
+                    break;
+                case 7:
                     running = false;
                     System.out.println("Thank you for using the services");
                     break;
@@ -103,7 +106,8 @@ public class HotelApp {
         System.out.println("| 3) Add rooms             |");
         System.out.println("| 4) View bookings         |");
         System.out.println("| 5) add customers         |");
-        System.out.println("| 6) Exit                  |");
+        System.out.println("| 6) Edit Bookings         |");
+        System.out.println("| 7) Exit                  |");
         System.out.println("*__________________________*");
         System.out.print("> ");
         int userInput = input.nextInt();
