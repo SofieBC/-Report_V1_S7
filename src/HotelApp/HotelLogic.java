@@ -1,6 +1,8 @@
 package HotelApp;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+
 
 public class HotelLogic {
 
@@ -9,7 +11,7 @@ public class HotelLogic {
     ArrayList<Booking> bookingList = new ArrayList();
 
 
-    public void getRooms (){
+    public void getRooms() {
 
         Room room1 = new Room(1, 2, true, 50);
         Room room2 = new Room(2, 2, false, 50);
@@ -19,11 +21,12 @@ public class HotelLogic {
 
         System.out.println(roomList);
     }
+
     public void getCustomer() {
-        Customer customer1 = new Customer ("555", "Kalle", "hov 12", "0755555");
-        Customer customer2 = new Customer ("444", "Johanna" , "Hotellv 23", "0708486321");
-        Customer customer3 = new Customer ("333", "Adam", "Kristianstadv 1", "0722484848");
-        Customer customer4 = new Customer ("222", "Adina", "Lundav 487", "0732554620");
+        Customer customer1 = new Customer("555", "Kalle", "hov 12", "0755555");
+        Customer customer2 = new Customer("444", "Johanna", "Hotellv 23", "0708486321");
+        Customer customer3 = new Customer("333", "Adam", "Kristianstadv 1", "0722484848");
+        Customer customer4 = new Customer("222", "Adina", "Lundav 487", "0732554620");
 
 
         customerList.add(customer1);
@@ -57,8 +60,8 @@ public class HotelLogic {
     }
 
     public void checkInCustomer() {
-        for(Customer customer : customerList){
-            if (customer.getSsn().equals("555")){
+        for (Customer customer : customerList) {
+            if (customer.getSsn().equals("555")) {
                 //System.out.println(customer.getSsn("555"));
             }
         }
@@ -75,4 +78,51 @@ public class HotelLogic {
                 ", customerList=" + customerList +
                 '}';
     }
+    private String[] rooms = new String[10];
+
+    public HotelLogic() {
+        initialise();
+    }
+
+    private void initialise() {
+        for (int x = 0; x < rooms.length; x++) {
+            rooms[x] = "e";
+        }
+        System.out.println("initialization is complete.");
+    }
+
+    public void printRooms3() {
+        for (int i = 0; i < rooms.length; i++) {
+            if (rooms[i].equals("e")) {
+                System.out.println("Room(" + (i + 1) + ") is Empty.");
+            } else {
+                System.out.println("Room(" + (i + 1) + ") is occupied by " + rooms[i]);
+            }
+        }
+    }
+
+    public void addCustomer(Scanner input) {
+        int roomNum = 0;
+        while (roomNum - 1 < 0 || roomNum - 1 > rooms.length - 1) {
+            System.out.println("Enter a room number from (1-" + (rooms.length) + "):");
+            roomNum = input.nextInt();
+        }
+
+        System.out.println("Please provide the customer name for room " + (roomNum) + " :");
+        String customer = input.nextLine();
+        input.nextLine();
+        rooms[roomNum - 1] = customer;
+
+        System.out.println("Enter customers SSN: ");
+        String SSN=input.nextLine();
+        System.out.println("Enter customers phone number: ");
+        String phone= input.nextLine();
+        System.out.println("Enter customers address: ");
+        String address=input.nextLine();
+
+
+
+    }
+
 }
+

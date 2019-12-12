@@ -8,10 +8,10 @@ public class Customer {
     private String address;
     private String telephoneNumber;
 
-    public Customer(String ssn, String name, String adress, String telephoneNumber) {
+    public Customer(String ssn, String name, String address, String telephoneNumber) {
         this.ssn = ssn;
         this.name = name;
-        this.address = adress;
+        this.address = address;
         this.telephoneNumber = telephoneNumber;
 
 
