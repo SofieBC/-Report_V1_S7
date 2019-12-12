@@ -5,10 +5,13 @@ import java.util.Scanner;
 public class HotelApp {
 
     private Scanner input = new Scanner(System.in);
+    private Object HotelApp;
 
     public static void main(String[] args) throws Exception {
         HotelApp myApp = new HotelApp();
         HotelLogic logic = new HotelLogic();
+
+
 
         handleLogin(myApp, logic);
     }
@@ -74,6 +77,7 @@ public class HotelApp {
                     break;
                 case 2:
                     //Method
+                    logic.bookRoom ();
                     break;
                 case 3:
                     //Method
@@ -88,6 +92,9 @@ public class HotelApp {
                     //Method
                     break;
                 case 6:
+                    //metod för edit bookings
+                    break;
+                case 7:
                     running = false;
                     System.out.println("Thank you for using the services");
                     break;
@@ -107,7 +114,8 @@ public class HotelApp {
         System.out.println("| 3) Add rooms             |");
         System.out.println("| 4) View bookings         |");
         System.out.println("| 5) add customers         |");
-        System.out.println("| 6) Exit                  |");
+        System.out.println("| 6) Edit Bookings         |");
+        System.out.println("| 7) Exit                  |");
         System.out.println("*__________________________*");
         System.out.print("> ");
         int userInput = input.nextInt();
@@ -125,7 +133,7 @@ public class HotelApp {
                     //Method
                     break;
                 case 2:
-                    //Method
+                    logic.bookRoom();
                     break;
                 case 3:
                     //Method
@@ -145,6 +153,7 @@ public class HotelApp {
                     break;
             }
 
+                //HotelApp[roomNumber].setName(roomName);
         }
     }
 
@@ -160,6 +169,8 @@ public class HotelApp {
         input.nextLine();
         return userInput;
     }
+
+
 }
 
 
