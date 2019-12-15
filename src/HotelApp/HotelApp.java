@@ -72,7 +72,7 @@ public class HotelApp {
             switch (userMenuChoice) {
                 case 1:
                     logic.getAvailableRooms();
-                    logic.printRooms3();
+                    logic.printRooms();
                     //Method
                     break;
                 case 2:
@@ -81,13 +81,12 @@ public class HotelApp {
                     break;
                 case 3:
                     //Method
-                    logic.getRooms();
+                    //
                     break;
                 case 4:
                     //Method
                     break;
                 case 5:
-                    logic.getCustomer();
                     logic.addCustomer(input);
                     //Method
                     break;
@@ -129,7 +128,7 @@ public class HotelApp {
             int userMenuChoice = printMenu2();
             switch (userMenuChoice) {
                 case 1:
-                    logic.getAvailableRooms();
+
                     //Method
                     break;
                 case 2:

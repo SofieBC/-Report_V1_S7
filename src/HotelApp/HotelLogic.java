@@ -2,22 +2,15 @@ package HotelApp;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-<<<<<<< HEAD
 
-=======
->>>>>>> 92fa8ccc87828cfdb9d7b30891e63d86dfd55853
 
 public class HotelLogic {
 
-    ArrayList<Room> roomList = new ArrayList<Room> ();
-    ArrayList<Customer> customerList = new ArrayList<Customer> ();
-    ArrayList<Booking> bookingList = new ArrayList ();
+    ArrayList<Room> roomList = new ArrayList<Room>();
+    ArrayList<Customer> customerList = new ArrayList<Customer>();
+    ArrayList<Booking> bookingList = new ArrayList();
 
-    public HotelLogic() {
-        Room room1 = new Room (1, 2, true, 100);
-        Room room2 = new Room (2, 2, false, 50);
 
-<<<<<<< HEAD
     public void getRooms() {
 
         Room room1 = new Room(1, 2, true, 50);
@@ -34,28 +27,28 @@ public class HotelLogic {
         Customer customer2 = new Customer("444", "Johanna", "Hotellv 23", "0708486321");
         Customer customer3 = new Customer("333", "Adam", "Kristianstadv 1", "0722484848");
         Customer customer4 = new Customer("222", "Adina", "Lundav 487", "0732554620");
-=======
-        roomList.add (room1);
-        roomList.add (room2);
 
-        Customer customer1 = new Customer ("555", "Kalle", "hov 12", "0755555");
-        Customer customer2 = new Customer ("444", "Johanna", "Hotellv 23", "0708486321");
-        Customer customer3 = new Customer ("333", "Adam", "Kristianstadv 1", "0722484848");
-        Customer customer4 = new Customer ("222", "Adina", "Lundav 487", "0732554620");
->>>>>>> 92fa8ccc87828cfdb9d7b30891e63d86dfd55853
+        roomList.add(room1);
+        roomList.add(room2);
 
-        customerList.add (customer1);
-        customerList.add (customer2);
-        customerList.add (customer3);
-        customerList.add (customer4);
+        Customer customer1 = new Customer("555", "Kalle", "hov 12", "0755555");
+        Customer customer2 = new Customer("444", "Johanna", "Hotellv 23", "0708486321");
+        Customer customer3 = new Customer("333", "Adam", "Kristianstadv 1", "0722484848");
+        Customer customer4 = new Customer("222", "Adina", "Lundav 487", "0732554620");
+
+
+        customerList.add(customer1);
+        customerList.add(customer2);
+        customerList.add(customer3);
+        customerList.add(customer4);
     }
 
     public void getRooms() {
-        System.out.println (roomList);
+        System.out.println(roomList);
     }
 
     public void getCustomer() {
-        System.out.println (customerList);
+        System.out.println(customerList);
     }
 
 
@@ -65,8 +58,8 @@ public class HotelLogic {
 
     public void getAvailableRooms() {
         for (Room room : roomList) {
-            if (!room.isBooked ()) {
-                System.out.println (room);
+            if (!room.isBooked()) {
+                System.out.println(room);
             }
         }
     }
@@ -82,28 +75,45 @@ public class HotelLogic {
 
     public void checkInCustomer() {
         for (Customer customer : customerList) {
-<<<<<<< HEAD
+
             if (customer.getSsn().equals("555")) {
-=======
-            if (customer.getSsn ().equals ("555")) {
->>>>>>> 92fa8ccc87828cfdb9d7b30891e63d86dfd55853
-                //System.out.println(customer.getSsn("555"));
+
+                if (customer.getSsn().equals("555")) {
+
+                    //System.out.println(customer.getSsn("555"));
+                }
             }
         }
+
+        public boolean checkOutCustomer (String ssn,int bookingId) {
+            return false;
+        }
+
+        @Override
+        public String toString () {
+            return; = "HotelLogic{" +
+                    "roomList=" + roomList +
+                    ", customerList=" + customerList +
+                    '}';
+            return;
+        }
+
+
     }
 
-    public boolean checkOutCustomer(String ssn, int bookingId) {
-        return false;
+
+    public void bookRoom() {
+        int InputRoomNumber;
+        String RoomName;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the roomnumber you would like to book (1-2): ");
+        int roomNumber = input.nextInt() - 1;
+        System.out.println("Would you like to check in now? 1) Yes 2) No");
+        InputRoomNumber = Integer.parseInt(input.next());
+        String roomName = new String();
     }
 
-    @Override
-    public String toString() {
-        return "HotelLogic{" +
-                "roomList=" + roomList +
-                ", customerList=" + customerList +
-                '}';
-    }
-<<<<<<< HEAD
+}
     private String[] rooms = new String[10];
 
     public HotelLogic() {
@@ -117,7 +127,7 @@ public class HotelLogic {
         System.out.println("initialization is complete.");
     }
 
-    public void printRooms3() {
+    public void printRooms() {
         for (int i = 0; i < rooms.length; i++) {
             if (rooms[i].equals("e")) {
                 System.out.println("Room(" + (i + 1) + ") is Empty.");
@@ -138,30 +148,6 @@ public class HotelLogic {
         String customer = input.nextLine();
         input.nextLine();
         rooms[roomNum - 1] = customer;
-
-        System.out.println("Enter customers SSN: ");
-        String SSN=input.nextLine();
-        System.out.println("Enter customers phone number: ");
-        String phone= input.nextLine();
-        System.out.println("Enter customers address: ");
-        String address=input.nextLine();
-
-
-
     }
 
-=======
-
-    public void bookRoom() {
-        int InputRoomNumber;
-        String RoomName;
-        Scanner input = new Scanner (System.in);
-        System.out.println ("Enter the roomnumber you would like to book (1-2): ");
-        int roomNumber = input.nextInt () - 1;
-        System.out.println ("Would you like to check in now? 1) Yes 2) No");
-        InputRoomNumber = Integer.parseInt (input.next ());
-        String roomName = new String ();
-    }
->>>>>>> 92fa8ccc87828cfdb9d7b30891e63d86dfd55853
 }
-
