@@ -28,27 +28,11 @@ public class HotelLogic {
         Customer customer3 = new Customer("333", "Adam", "Kristianstadv 1", "0722484848");
         Customer customer4 = new Customer("222", "Adina", "Lundav 487", "0732554620");
 
-        roomList.add(room1);
-        roomList.add(room2);
-
-        Customer customer1 = new Customer("555", "Kalle", "hov 12", "0755555");
-        Customer customer2 = new Customer("444", "Johanna", "Hotellv 23", "0708486321");
-        Customer customer3 = new Customer("333", "Adam", "Kristianstadv 1", "0722484848");
-        Customer customer4 = new Customer("222", "Adina", "Lundav 487", "0732554620");
-
 
         customerList.add(customer1);
         customerList.add(customer2);
         customerList.add(customer3);
         customerList.add(customer4);
-    }
-
-    public void getRooms() {
-        System.out.println(roomList);
-    }
-
-    public void getCustomer() {
-        System.out.println(customerList);
     }
 
 
@@ -73,34 +57,6 @@ public class HotelLogic {
         return true;
     }
 
-    public void checkInCustomer() {
-        for (Customer customer : customerList) {
-
-            if (customer.getSsn().equals("555")) {
-
-                if (customer.getSsn().equals("555")) {
-
-                    //System.out.println(customer.getSsn("555"));
-                }
-            }
-        }
-
-        public boolean checkOutCustomer (String ssn,int bookingId) {
-            return false;
-        }
-
-        @Override
-        public String toString () {
-            return; = "HotelLogic{" +
-                    "roomList=" + roomList +
-                    ", customerList=" + customerList +
-                    '}';
-            return;
-        }
-
-
-    }
-
 
     public void bookRoom() {
         int InputRoomNumber;
@@ -113,7 +69,6 @@ public class HotelLogic {
         String roomName = new String();
     }
 
-}
     private String[] rooms = new String[10];
 
     public HotelLogic() {
