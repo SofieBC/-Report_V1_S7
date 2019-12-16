@@ -18,11 +18,17 @@ public class HotelApp {
         Scanner input = new Scanner(System.in);
         boolean bool = true;
         while (bool) {
-            System.out.println("*--------Login---------*");
-            System.out.println("| 1. Login as Employer |");
-            System.out.println("| 2. Login as Customer |");
-            System.out.println("| 3. Exit              |");
-            System.out.println("*----------------------*");
+            System.out.println("****************************");
+            System.out.println("| HOTEL MANAGEMENT SYSTEM  |");
+            System.out.println("****************************");
+            System.out.println("*--------Login-------------*");
+            System.out.println("| 1. Login as Employer     |");
+            System.out.println("| 2. Login as Customer     |");
+            System.out.println("| 3. Exit                  |");
+            System.out.println("*--------------------------*");
+            System.out.println("****************************");
+
+            System.out.print("Select option: ");
             System.out.print("> ");
             int choice = input.nextInt();
             input.nextLine();
@@ -64,6 +70,7 @@ public class HotelApp {
             switch (userMenuChoice) {
                 case 1:
                     logic.getAvailableRooms();
+                    logic.printRooms();
                     //Method
                     break;
                 case 2:
@@ -72,13 +79,13 @@ public class HotelApp {
                     break;
                 case 3:
                     //Method
-                    logic.getRooms();
+                    //
                     break;
                 case 4:
                     //Method
                     break;
                 case 5:
-                    logic.getCustomer();
+                    logic.addCustomer(input);
                     //Method
                     break;
                 case 6:
@@ -118,7 +125,7 @@ public class HotelApp {
             int userMenuChoice = printMenu2();
             switch (userMenuChoice) {
                 case 1:
-                    logic.getAvailableRooms();
+
                     //Method
                     break;
                 case 2:
