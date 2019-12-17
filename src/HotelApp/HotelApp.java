@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class HotelApp {
 
     private Scanner input = new Scanner(System.in);
-    private Object HotelApp;
 
     public static void main(String[] args) throws Exception {
         HotelApp myApp = new HotelApp();
@@ -85,7 +84,7 @@ public class HotelApp {
                     //Metod
                     break;
                 case 5:
-                    logic.addCustomer(input);
+                    logic.addCustomer();
                     //Method
                     break;
                 case 6:
@@ -148,7 +147,6 @@ public class HotelApp {
                     System.out.println("Enter a proper value");
                     break;
             }
-            //HotelApp[roomNumber].setName(roomName);
         }
     }
 

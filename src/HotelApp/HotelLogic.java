@@ -3,7 +3,6 @@ package HotelApp;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class HotelLogic {
 
     ArrayList<Room> roomList = new ArrayList<Room>();
@@ -22,24 +21,6 @@ public class HotelLogic {
         System.out.println(roomList);
     }
 
-    public void getCustomer() {
-        Customer customer1 = new Customer("555", "Kalle", "hov 12", "0755555");
-        Customer customer2 = new Customer("444", "Johanna", "Hotellv 23", "0708486321");
-        Customer customer3 = new Customer("333", "Adam", "Kristianstadv 1", "0722484848");
-        Customer customer4 = new Customer("222", "Adina", "Lundav 487", "0732554620");
-
-
-        customerList.add(customer1);
-        customerList.add(customer2);
-        customerList.add(customer3);
-        customerList.add(customer4);
-    }
-
-
-    public Room getRoom(int roomNumber) {
-        return null;
-    }
-
     public void getAvailableRooms() {
         for (Room room : roomList) {
             if (!room.isBooked()) {
@@ -49,14 +30,21 @@ public class HotelLogic {
     }
 
 
-    public boolean addCustomer(Customer customer) {
-        return true;
-    }
+    public void addCustomer(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter ssn: ");
+        String ssn = input.nextLine();
+        System.out.print("Enter name: ");
+        String name = input.nextLine();
+        System.out.print("Enter address: ");
+        String address = input.nextLine();
+        System.out.print("Enter phonenumber: ");
+        String phoneNumber = input.nextLine();
+        Customer customer = new Customer(ssn,name, address,phoneNumber);
 
-    public boolean addRoom(Room room) {
-        return true;
-    }
+        customerList.add(customer);
 
+    }
 
     public void bookRoom() {
         int InputRoomNumber;
@@ -90,19 +78,6 @@ public class HotelLogic {
                 System.out.println("Room(" + (i + 1) + ") is occupied by " + rooms[i]);
             }
         }
-    }
-
-    public void addCustomer(Scanner input) {
-        int roomNum = 0;
-        while (roomNum - 1 < 0 || roomNum - 1 > rooms.length - 1) {
-            System.out.println("Enter a room number from (1-" + (rooms.length) + "):");
-            roomNum = input.nextInt();
-        }
-
-        System.out.println("Please provide the customer name for room " + (roomNum) + " :");
-        String customer = input.nextLine();
-        input.nextLine();
-        rooms[roomNum - 1] = customer;
     }
 
 }
