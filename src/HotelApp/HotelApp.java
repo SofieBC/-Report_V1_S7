@@ -73,18 +73,16 @@ public class HotelApp {
                 case 1:
                     logic.getAvailableRooms();
                     logic.printRooms3();
-                    //Method
                     break;
                 case 2:
-                    //Method
+
                     logic.bookRoom ();
                     break;
                 case 3:
-                    //Method
                     logic.getRooms();
                     break;
                 case 4:
-                    //Method
+                    //Metod
                     break;
                 case 5:
                     logic.getCustomer();
