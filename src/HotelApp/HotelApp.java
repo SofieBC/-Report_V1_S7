@@ -11,8 +11,6 @@ public class HotelApp {
         HotelApp myApp = new HotelApp();
         HotelLogic logic = new HotelLogic();
 
-
-
         handleLogin(myApp, logic);
     }
 
@@ -72,20 +70,21 @@ public class HotelApp {
             switch (userMenuChoice) {
                 case 1:
                     logic.getAvailableRooms();
-                    logic.printRooms3();
+                    logic.printRooms();
+                    //Method
                     break;
                 case 2:
-
-                    logic.bookRoom ();
+                    //Method
+                    logic.bookRoom();
                     break;
                 case 3:
-                    logic.getRooms();
+                    //Method
+                    //
                     break;
                 case 4:
                     //Metod
                     break;
                 case 5:
-                    logic.getCustomer();
                     logic.addCustomer(input);
                     //Method
                     break;
@@ -100,7 +99,6 @@ public class HotelApp {
                     System.out.println("Enter a proper value");
                     break;
             }
-
         }
     }
 
@@ -127,7 +125,7 @@ public class HotelApp {
             int userMenuChoice = printMenu2();
             switch (userMenuChoice) {
                 case 1:
-                    logic.getAvailableRooms();
+
                     //Method
                     break;
                 case 2:
@@ -150,8 +148,7 @@ public class HotelApp {
                     System.out.println("Enter a proper value");
                     break;
             }
-
-                //HotelApp[roomNumber].setName(roomName);
+            //HotelApp[roomNumber].setName(roomName);
         }
     }
 
@@ -167,7 +164,6 @@ public class HotelApp {
         input.nextLine();
         return userInput;
     }
-
 
 }
 
