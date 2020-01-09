@@ -34,6 +34,10 @@ public class Room {
         return isBooked;
     }
 
+    public void setBooked(boolean booked) {
+        isBooked = booked;
+    }
+
     @Override
     public String toString() {
         return "Room{" +

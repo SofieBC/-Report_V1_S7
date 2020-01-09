@@ -9,16 +9,28 @@ public class HotelLogic {
     ArrayList<Customer> customerList = new ArrayList<Customer>();
     ArrayList<Booking> bookingList = new ArrayList();
 
-
-    public void getRooms() {
-
+    public void Rooms() {
         Room room1 = new Room(1, 2, true, 50);
-        Room room2 = new Room(2, 2, false, 50);
+        Room room2 = new Room(2, 4, true, 100);
+        Room room3 = new Room(3, 4, true, 50);
+        Room room4 = new Room(4, 2, false, 50);
+        Room room5 = new Room(5, 2, false, 50);
+        Room room6 = new Room(6, 1, false, 50);
 
         roomList.add(room1);
         roomList.add(room2);
+        roomList.add(room3);
+        roomList.add(room4);
+        roomList.add(room5);
+        roomList.add(room6);
 
-        System.out.println(roomList);
+    }
+
+    public void showAllRooms() {
+        System.out.println("-- All Rooms --");
+        for (Room room : roomList) {
+            System.out.println(room);
+        }
     }
 
     public void getAvailableRooms() {
@@ -30,8 +42,7 @@ public class HotelLogic {
         }
     }
 
-
-    public void addCustomer(){
+    public void addCustomer() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter ssn: ");
         String ssn = input.nextLine();
@@ -41,24 +52,69 @@ public class HotelLogic {
         String address = input.nextLine();
         System.out.print("Enter phonenumber: ");
         String phoneNumber = input.nextLine();
-        Customer customer = new Customer(ssn,name, address,phoneNumber);
+        Customer customer = new Customer(ssn, name, address, phoneNumber);
 
         customerList.add(customer);
 
     }
 
-    public void bookRoom() {
-        int InputRoomNumber;
-        String RoomName;
+    public void cancelBooking() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the roomnumber you would like to book (1-2): ");
-        int roomNumber = input.nextInt() - 1;
-        System.out.println("Would you like to check in now? 1) Yes 2) No");
-        InputRoomNumber = Integer.parseInt(input.next());
-        String roomName = new String();
+        System.out.println("-- All booked rooms --");
+        for (Room room : roomList) {
+            if (room.isBooked()) {
+                System.out.println(room);
+            }
+        }
+        System.out.print("choose roomnumber to cancel the booking: ");
+        int value = input.nextInt();
+        input.nextLine();
+        System.out.print("are you sure you want to cancel the booking? (yes/no): ");
+        String choice = input.nextLine();
+        for (Room room : roomList) {
+            if (choice.equals("yes") && value == room.getRoomNumber()) {
+                room.setBooked(false);
+                System.out.println("-- Roomnumber " + room.getRoomNumber()+ " is now canceled --");
+            }
+        }
     }
 
-    private String[] rooms = new String[10];
+    public void bookRoom() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("-- Available rooms --");
+        for (Room room : roomList) {
+            if (!room.isBooked())
+                System.out.println(room);
+        }
+        System.out.println("Enter customer ssn to book a room: ");
+        String ssn = input.nextLine();
+
+        for (Customer customer : customerList) {
+            if (ssn.equals(customer.getSsn()))
+                System.out.print("what room do u want to book?: ");
+            int bookRoom = input.nextInt();
+            input.nextLine();
+
+            for (Room room : roomList) {
+                if (bookRoom == room.getRoomNumber()) {
+                    room.setBooked(true);
+                }
+            }
+        }
+    }
+
+    public void showBookedRooms() {
+        System.out.println("-- All Booked rooms --");
+        for (Room room : roomList) {
+            if (room.isBooked()) {
+                System.out.println(room);
+            }
+        }
+    }
+
+
+
+    /*private String[] rooms = new String[10];
 
     public HotelLogic() {
         initialise();
@@ -79,6 +135,6 @@ public class HotelLogic {
                 System.out.println("Room(" + (i + 1) + ") is occupied by " + rooms[i]);
             }
         }
-    }
+    } */
 
 }

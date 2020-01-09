@@ -9,7 +9,7 @@ public class HotelApp {
     public static void main(String[] args) throws Exception {
         HotelApp myApp = new HotelApp();
         HotelLogic logic = new HotelLogic();
-
+        logic.Rooms();
         handleLogin(myApp, logic);
     }
 
@@ -69,26 +69,21 @@ public class HotelApp {
             switch (userMenuChoice) {
                 case 1:
                     logic.getAvailableRooms();
-                    logic.printRooms();
-                    //Method
                     break;
                 case 2:
-                    //Method
                     logic.bookRoom();
                     break;
                 case 3:
-                    //Method
-                    //
+                    logic.showAllRooms();
                     break;
                 case 4:
-                    //Metod
+                    logic.showBookedRooms();
                     break;
                 case 5:
                     logic.addCustomer();
-                    //Method
                     break;
                 case 6:
-                    //metod för edit bookings
+                    logic.cancelBooking();
                     break;
                 case 7:
                     running = false;
@@ -106,10 +101,10 @@ public class HotelApp {
         System.out.println("*____ Welcome Employer ____*");
         System.out.println("| 1) show available rooms  |");
         System.out.println("| 2) Add booking           |");
-        System.out.println("| 3) Add rooms             |");
+        System.out.println("| 3) view all rooms        |");
         System.out.println("| 4) View bookings         |");
         System.out.println("| 5) add customers         |");
-        System.out.println("| 6) Edit Bookings         |");
+        System.out.println("| 6) cancel booking        |");
         System.out.println("| 7) Exit                  |");
         System.out.println("*__________________________*");
         System.out.print("> ");
