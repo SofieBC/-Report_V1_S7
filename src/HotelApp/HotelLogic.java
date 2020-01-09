@@ -97,16 +97,19 @@ public class HotelLogic {
         String ssn = input.nextLine();
 
         for (Customer customer : customerList) {
-            if (ssn.equals(customer.getSsn()))
+            if (ssn.equals(customer.getSsn())) {
                 System.out.print("What room do you want to book?: ");
-            int bookRoom = input.nextInt();
-            input.nextLine();
+                int bookRoom = input.nextInt();
+                input.nextLine();
 
-            for (Room room : roomList) {
-                if (bookRoom == room.getRoomNumber()) {
-                    room.setBooked(true);
-                    System.out.println("Roomnumber " + room.getRoomNumber() + " is now booked");
+                for (Room room : roomList) {
+                    if (bookRoom == room.getRoomNumber()) {
+                        room.setBooked(true);
+                        System.out.println("Roomnumber " + room.getRoomNumber() + " is now booked");
+                    }
                 }
+            }else {
+                System.out.println("Sorry! no customer with that ssn!");
             }
         }
     }
@@ -130,10 +133,10 @@ public class HotelLogic {
                 for (Room room : roomList) {
                     if (bookRoom == room.getRoomNumber()) {
                         room.setBooked(true);
-                        System.out.println("Roomnumber "+ room.getRoomNumber()+" is now booked!");
+                        System.out.println("Roomnumber " + room.getRoomNumber() + " is now booked!");
                     }
                 }
-            }else {
+            } else {
                 System.out.println("No customer with that ssn");
             }
         }
