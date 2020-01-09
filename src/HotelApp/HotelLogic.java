@@ -22,6 +22,7 @@ public class HotelLogic {
     }
 
     public void getAvailableRooms() {
+        System.out.println("-- All available rooms --");
         for (Room room : roomList) {
             if (!room.isBooked()) {
                 System.out.println(room);
