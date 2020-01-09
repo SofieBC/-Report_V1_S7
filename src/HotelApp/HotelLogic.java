@@ -58,6 +58,13 @@ public class HotelLogic {
 
     }
 
+    public void showCustomers() {
+        System.out.println("-- All Customers --");
+        for (Customer customer : customerList) {
+            System.out.println(customer);
+        }
+    }
+
     public void cancelBooking() {
         Scanner input = new Scanner(System.in);
         System.out.println("-- All booked rooms --");

@@ -86,6 +86,9 @@ public class HotelApp {
                     logic.cancelBooking();
                     break;
                 case 7:
+                    logic.showCustomers();
+                    break;
+                case 8:
                     running = false;
                     System.out.println("Thank you for using the services");
                     break;
@@ -103,9 +106,10 @@ public class HotelApp {
         System.out.println("| 2) Add booking           |");
         System.out.println("| 3) view all rooms        |");
         System.out.println("| 4) View bookings         |");
-        System.out.println("| 5) add customers         |");
-        System.out.println("| 6) cancel booking        |");
-        System.out.println("| 7) Exit                  |");
+        System.out.println("| 5) Add customers         |");
+        System.out.println("| 6) Cancel booking        |");
+        System.out.println("| 7) Show all customers    |");
+        System.out.println("| 8) Exit                  |");
         System.out.println("*__________________________*");
         System.out.print("> ");
         int userInput = input.nextInt();
@@ -119,14 +123,13 @@ public class HotelApp {
             int userMenuChoice = printMenu2();
             switch (userMenuChoice) {
                 case 1:
-
-                    //Method
+                    logic.getAvailableRooms();
                     break;
                 case 2:
                     logic.bookRoom();
                     break;
                 case 3:
-                    //Method
+                    logic.cancelBooking();
                     break;
                 case 4:
                     //Method
@@ -150,6 +153,7 @@ public class HotelApp {
         System.out.println("*____ Welcome Customer ____*");
         System.out.println("| 1) show available rooms  |");
         System.out.println("| 2) Add booking           |");
+        System.out.println("| 3) Cancel Booking        |");
         System.out.println("| 6) Exit                  |");
         System.out.println("*__________________________*");
         System.out.print("> ");
