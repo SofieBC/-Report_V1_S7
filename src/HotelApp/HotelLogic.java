@@ -81,7 +81,32 @@ public class HotelLogic {
         for (Room room : roomList) {
             if (choice.equals("yes") && value == room.getRoomNumber()) {
                 room.setBooked(false);
-                System.out.println("-- Roomnumber " + room.getRoomNumber()+ " is now canceled --");
+                System.out.println("-- Roomnumber " + room.getRoomNumber() + " is now canceled --");
+            }
+        }
+    }
+
+    public void bookRoomForCustomer() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("-- Available rooms --");
+        for (Room room : roomList) {
+            if (!room.isBooked())
+                System.out.println(room);
+        }
+        System.out.println("Enter your ssn to book a room: ");
+        String ssn = input.nextLine();
+
+        for (Customer customer : customerList) {
+            if (ssn.equals(customer.getSsn()))
+                System.out.print("What room do you want to book?: ");
+            int bookRoom = input.nextInt();
+            input.nextLine();
+
+            for (Room room : roomList) {
+                if (bookRoom == room.getRoomNumber()) {
+                    room.setBooked(true);
+                    System.out.println("Roomnumber " + room.getRoomNumber() + " is now booked");
+                }
             }
         }
     }
@@ -97,15 +122,19 @@ public class HotelLogic {
         String ssn = input.nextLine();
 
         for (Customer customer : customerList) {
-            if (ssn.equals(customer.getSsn()))
+            if (ssn.equals(customer.getSsn())) {
                 System.out.print("what room do u want to book?: ");
-            int bookRoom = input.nextInt();
-            input.nextLine();
+                int bookRoom = input.nextInt();
+                input.nextLine();
 
-            for (Room room : roomList) {
-                if (bookRoom == room.getRoomNumber()) {
-                    room.setBooked(true);
+                for (Room room : roomList) {
+                    if (bookRoom == room.getRoomNumber()) {
+                        room.setBooked(true);
+                        System.out.println("Roomnumber "+ room.getRoomNumber()+" is now booked!");
+                    }
                 }
+            }else {
+                System.out.println("No customer with that ssn");
             }
         }
     }
@@ -118,6 +147,22 @@ public class HotelLogic {
             }
         }
     }
+
+    public void addCustomerForCustomer() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter your ssn: ");
+        String ssn = input.nextLine();
+        System.out.print("Enter your name: ");
+        String name = input.nextLine();
+        System.out.print("Enter your address: ");
+        String address = input.nextLine();
+        System.out.print("Enter your telephonenumber: ");
+        String phone = input.nextLine();
+
+        customerList.add(new Customer(ssn, name, address, phone));
+
+    }
+
 
 
 

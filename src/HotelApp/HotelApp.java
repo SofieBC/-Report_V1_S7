@@ -126,13 +126,13 @@ public class HotelApp {
                     logic.getAvailableRooms();
                     break;
                 case 2:
-                    logic.bookRoom();
+                    logic.bookRoomForCustomer();
                     break;
                 case 3:
                     logic.cancelBooking();
                     break;
                 case 4:
-                    //Method
+                    logic.addCustomerForCustomer();
                     break;
                 case 5:
                     //Method
@@ -154,6 +154,7 @@ public class HotelApp {
         System.out.println("| 1) show available rooms  |");
         System.out.println("| 2) Add booking           |");
         System.out.println("| 3) Cancel Booking        |");
+        System.out.println("| 4) Enter your information|");
         System.out.println("| 6) Exit                  |");
         System.out.println("*__________________________*");
         System.out.print("> ");
