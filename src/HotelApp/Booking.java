@@ -8,10 +8,12 @@ public class Booking {
     private Date checkInDate;
     private Date checkOutDate;
     private double totalPrice;
+    private String ssn;
 
-    public Booking(int bookingId, Date checkInDate, ArrayList<Room> roomList) {
+    public Booking(int bookingId, Date checkInDate, ArrayList<Room> roomList, String ssn) {
         this.bookingId = bookingId;
         this.checkInDate = checkInDate;
+        this.ssn = ssn;
     }
 
     public int getBookingId(int bookingId) {
