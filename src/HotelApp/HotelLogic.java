@@ -65,25 +65,43 @@ public class HotelLogic {
         }
     }
 
-    public void cancelBooking() {
+    public void cancelBooking() throws Exception {
         Scanner input = new Scanner(System.in);
-        System.out.println("-- All booked rooms --");
-        for (Room room : roomList) {
-            if (room.isBooked()) {
-                System.out.println(room);
+        System.out.println("-- All bookings --");
+        for (Booking booking : bookingList) {
+                System.out.println(booking);
             }
-        }
-        System.out.print("choose roomnumber to cancel the booking: ");
+        System.out.print("choose bookingid to cancel the booking: ");
         int value = input.nextInt();
         input.nextLine();
         System.out.print("are you sure you want to cancel the booking? (yes/no): ");
         String choice = input.nextLine();
-        for (Room room : roomList) {
+        /*for (Room room : roomList) {
             if (choice.equals("yes") && value == room.getRoomNumber()) {
                 room.setBooked(false);
                 System.out.println("-- Roomnumber " + room.getRoomNumber() + " is now canceled --");
             }
+        }*/
+
+        for(Booking booking : bookingList){
+            int bookingToRemove = booking.getBookingId();
+            if (booking.getBookingId() == value && choice.equals("yes")){
+                for(Room room : roomList){
+                    room.setBooking(null);
+                    room.setBooked(false);
+                    bookingList.remove(bookingToRemove);
+                }
+            }
         }
+    }
+
+    private Booking getBooking(ArrayList<Booking> bookingList, int id) throws Exception {
+        for(Booking booking : bookingList){
+            if (booking.getBookingId() == id){
+                return booking;
+            }
+        }
+        throw new Exception("Booking with ID: " + id + "was not found");
     }
 
     public void bookRoomForCustomer() {
@@ -108,7 +126,7 @@ public class HotelLogic {
                         System.out.println("Roomnumber " + room.getRoomNumber() + " is now booked");
                     }
                 }
-            }else {
+            } else {
                 System.out.println("Sorry! no customer with that ssn!");
             }
         }
@@ -138,14 +156,12 @@ public class HotelLogic {
                         bookingList.add(booking);
                     }
                 }
-            } else {
-                System.out.println("No customer with that ssn");
             }
         }
     }
 
-    public void showAllBookings(){
-        for(Booking booking : bookingList){
+    public void showAllBookings() {
+        for (Booking booking : bookingList) {
             System.out.println(booking);
         }
     }

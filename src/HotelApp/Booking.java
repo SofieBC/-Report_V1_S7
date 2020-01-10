@@ -18,10 +18,19 @@ public class Booking {
         this.room = room;
     }
 
+    public int getRoom() {
+        return room;
+    }
+
+    public int getBookingId() {
+        return bookingId;
+    }
+
     @Override
     public String toString() {
         return "Booking{" +
                 "bookingId=" + bookingId +
+                ", room='" + room + '\'' +
                 ", ssn='" + ssn + '\'' +
                 '}';
     }

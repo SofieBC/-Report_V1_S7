@@ -6,6 +6,7 @@ public class Room {
     private boolean hasBalcony;
     private double pricePerNight;
     private boolean isBooked;
+    private Booking booking;
 
     public Room(int roomNumber, int numberOfBeds, boolean hasBalcony, double pricePerNight) {
         this.roomNumber = roomNumber;
@@ -17,6 +18,11 @@ public class Room {
     public int getRoomNumber() {
         return roomNumber;
     }
+
+    public void setBooking(Booking booking) {
+        this.booking = booking;
+    }
+
 
     public int getNumberOfBeds() {
         return numberOfBeds;
@@ -37,6 +43,8 @@ public class Room {
     public void setBooked(boolean booked) {
         isBooked = booked;
     }
+
+
 
     @Override
     public String toString() {

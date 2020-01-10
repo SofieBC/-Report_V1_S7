@@ -108,7 +108,7 @@ public class HotelApp {
         System.out.println("| 1) show available rooms  |");
         System.out.println("| 2) Add booking           |");
         System.out.println("| 3) view all rooms        |");
-        System.out.println("| 4) View bookings         |");
+        System.out.println("| 4) View booked rooms     |");
         System.out.println("| 5) Add customers         |");
         System.out.println("| 6) Cancel booking        |");
         System.out.println("| 7) Show all customers    |");
