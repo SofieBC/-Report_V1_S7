@@ -134,11 +134,19 @@ public class HotelLogic {
                     if (bookRoom == room.getRoomNumber()) {
                         room.setBooked(true);
                         System.out.println("Roomnumber " + room.getRoomNumber() + " is now booked!");
+                        Booking booking = new Booking(room.getRoomNumber(), customer.getSsn());
+                        bookingList.add(booking);
                     }
                 }
             } else {
                 System.out.println("No customer with that ssn");
             }
+        }
+    }
+
+    public void showAllBookings(){
+        for(Booking booking : bookingList){
+            System.out.println(booking);
         }
     }
 
@@ -165,31 +173,4 @@ public class HotelLogic {
         customerList.add(new Customer(ssn, name, address, phone));
 
     }
-
-
-
-
-    /*private String[] rooms = new String[10];
-
-    public HotelLogic() {
-        initialise();
-    }
-
-    private void initialise() {
-        for (int x = 0; x < rooms.length; x++) {
-            rooms[x] = "e";
-        }
-        System.out.println("initialization is complete.");
-    }
-
-    public void printRooms() {
-        for (int i = 0; i < rooms.length; i++) {
-            if (rooms[i].equals("e")) {
-                System.out.println("Room(" + (i + 1) + ") is Empty.");
-            } else {
-                System.out.println("Room(" + (i + 1) + ") is occupied by " + rooms[i]);
-            }
-        }
-    } */
-
 }

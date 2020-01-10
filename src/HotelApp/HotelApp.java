@@ -89,6 +89,9 @@ public class HotelApp {
                     logic.showCustomers();
                     break;
                 case 8:
+                    logic.showAllBookings();
+                    break;
+                case 9:
                     running = false;
                     System.out.println("Thank you for using the services");
                     break;
@@ -109,7 +112,8 @@ public class HotelApp {
         System.out.println("| 5) Add customers         |");
         System.out.println("| 6) Cancel booking        |");
         System.out.println("| 7) Show all customers    |");
-        System.out.println("| 8) Exit                  |");
+        System.out.println("| 8) show all bookings     |");
+        System.out.println("| 9) Exit                  |");
         System.out.println("*__________________________*");
         System.out.print("> ");
         int userInput = input.nextInt();
