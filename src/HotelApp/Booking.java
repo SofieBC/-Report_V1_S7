@@ -9,16 +9,16 @@ public class Booking {
     private Date checkOutDate;
     private double totalPrice;
     private String ssn;
-    private int room;
+    private Room room;
 
-    public Booking(int room, String ssn) {
+    public Booking(Room room, String ssn) {
         this.bookingId = bookingCounter++;
         //this.checkInDate = checkInDate;
         this.ssn = ssn;
         this.room = room;
     }
 
-    public int getRoom() {
+    public Room getRoom() {
         return room;
     }
 

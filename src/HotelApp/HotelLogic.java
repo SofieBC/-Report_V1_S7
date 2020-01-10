@@ -69,8 +69,8 @@ public class HotelLogic {
         Scanner input = new Scanner(System.in);
         System.out.println("-- All bookings --");
         for (Booking booking : bookingList) {
-                System.out.println(booking);
-            }
+            System.out.println(booking);
+        }
         System.out.print("choose bookingid to cancel the booking: ");
         int value = input.nextInt();
         input.nextLine();
@@ -82,22 +82,19 @@ public class HotelLogic {
                 System.out.println("-- Roomnumber " + room.getRoomNumber() + " is now canceled --");
             }
         }*/
-
-        for(Booking booking : bookingList){
-            int bookingToRemove = booking.getBookingId();
-            if (booking.getBookingId() == value && choice.equals("yes")){
-                for(Room room : roomList){
-                    room.setBooking(null);
-                    room.setBooked(false);
-                    bookingList.remove(bookingToRemove);
-                }
+        Booking bookingToRemove = getBooking(bookingList, value);
+        if (choice.equals("yes")) {
+            for(Room room : roomList){
+                room.setBooked(false);
+                room.setBooking(null);
             }
+            bookingList.remove(bookingToRemove);
         }
     }
 
     private Booking getBooking(ArrayList<Booking> bookingList, int id) throws Exception {
-        for(Booking booking : bookingList){
-            if (booking.getBookingId() == id){
+        for (Booking booking : bookingList) {
+            if (booking.getBookingId() == id) {
                 return booking;
             }
         }
@@ -152,7 +149,7 @@ public class HotelLogic {
                     if (bookRoom == room.getRoomNumber()) {
                         room.setBooked(true);
                         System.out.println("Roomnumber " + room.getRoomNumber() + " is now booked!");
-                        Booking booking = new Booking(room.getRoomNumber(), customer.getSsn());
+                        Booking booking = new Booking(room, customer.getSsn());
                         bookingList.add(booking);
                     }
                 }
