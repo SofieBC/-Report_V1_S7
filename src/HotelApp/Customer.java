@@ -1,7 +1,5 @@
 package HotelApp;
 
-import java.util.ArrayList;
-
 public class Customer {
     private String ssn;
     private String name;
@@ -13,7 +11,6 @@ public class Customer {
         this.name = name;
         this.address = address;
         this.telephoneNumber = telephoneNumber;
-
 
     }
 

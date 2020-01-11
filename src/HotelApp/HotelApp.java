@@ -9,7 +9,8 @@ public class HotelApp {
     public static void main(String[] args) throws Exception {
         HotelApp myApp = new HotelApp();
         HotelLogic logic = new HotelLogic();
-        logic.Rooms();
+        logic.rooms();
+        logic.customers();
         handleLogin(myApp, logic);
     }
 

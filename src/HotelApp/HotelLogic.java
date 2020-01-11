@@ -9,7 +9,7 @@ public class HotelLogic {
     ArrayList<Customer> customerList = new ArrayList<Customer>();
     ArrayList<Booking> bookingList = new ArrayList();
 
-    public void Rooms() {
+    public void rooms() {
         Room room1 = new Room(1, 2, true, 50);
         Room room2 = new Room(2, 4, true, 100);
         Room room3 = new Room(3, 4, true, 50);
@@ -23,6 +23,21 @@ public class HotelLogic {
         roomList.add(room4);
         roomList.add(room5);
         roomList.add(room6);
+
+    }
+
+    public void customers() {
+        Customer customer1 = new Customer("11", "11", "11", "11");
+        Customer customer2 = new Customer("22", "22", "22", "22");
+        Customer customer3 = new Customer("33", "33", "33", "33");
+        Customer customer4 = new Customer("44", "44", "44", "44");
+        Customer customer5 = new Customer("55", "55", "55", "55");
+
+        customerList.add(customer1);
+        customerList.add(customer2);
+        customerList.add(customer3);
+        customerList.add(customer4);
+        customerList.add(customer5);
 
     }
 
@@ -76,15 +91,9 @@ public class HotelLogic {
         input.nextLine();
         System.out.print("are you sure you want to cancel the booking? (yes/no): ");
         String choice = input.nextLine();
-        /*for (Room room : roomList) {
-            if (choice.equals("yes") && value == room.getRoomNumber()) {
-                room.setBooked(false);
-                System.out.println("-- Roomnumber " + room.getRoomNumber() + " is now canceled --");
-            }
-        }*/
         Booking bookingToRemove = getBooking(bookingList, value);
         if (choice.equals("yes")) {
-            for(Room room : roomList){
+            for (Room room : roomList) {
                 room.setBooked(false);
                 room.setBooking(null);
             }
@@ -113,18 +122,18 @@ public class HotelLogic {
 
         for (Customer customer : customerList) {
             if (ssn.equals(customer.getSsn())) {
-                System.out.print("What room do you want to book?: ");
+                System.out.print("what room do u want to book?: ");
                 int bookRoom = input.nextInt();
                 input.nextLine();
 
                 for (Room room : roomList) {
                     if (bookRoom == room.getRoomNumber()) {
                         room.setBooked(true);
-                        System.out.println("Roomnumber " + room.getRoomNumber() + " is now booked");
+                        System.out.println("Roomnumber " + room.getRoomNumber() + " is now booked!");
+                        Booking booking = new Booking(room, customer.getSsn());
+                        bookingList.add(booking);
                     }
                 }
-            } else {
-                System.out.println("Sorry! no customer with that ssn!");
             }
         }
     }
