@@ -1,0 +1,2 @@
+Booking{bookingId=1, room='Room{roomNumber=1, numberOfBeds=2, hasBalcony=true, pricePerNight=50.0, isBooked=true}', ssn='11'}
+Booking{bookingId=2, room='Room{roomNumber=2, numberOfBeds=4, hasBalcony=true, pricePerNight=100.0, isBooked=true}', ssn='22'}

@@ -1,12 +1,17 @@
 package HotelApp;
 
-public class Room {
+import java.io.Serializable;
+
+public class Room implements Serializable {
     private int roomNumber ;
     private int numberOfBeds;
     private boolean hasBalcony;
     private double pricePerNight;
     private boolean isBooked;
     private Booking booking;
+
+    public Room(){
+    }
 
     public Room(int roomNumber, int numberOfBeds, boolean hasBalcony, double pricePerNight) {
         this.roomNumber = roomNumber;

@@ -1,10 +1,16 @@
 package HotelApp;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
     private String ssn;
     private String name;
     private String address;
     private String telephoneNumber;
+
+    public Customer(){
+
+    }
 
     public Customer(String ssn, String name, String address, String telephoneNumber) {
         this.ssn = ssn;

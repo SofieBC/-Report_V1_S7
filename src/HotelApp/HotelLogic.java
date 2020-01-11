@@ -1,13 +1,17 @@
 package HotelApp;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class HotelLogic {
+public class HotelLogic implements Serializable {
 
     ArrayList<Room> roomList = new ArrayList<Room>();
     ArrayList<Customer> customerList = new ArrayList<Customer>();
     ArrayList<Booking> bookingList = new ArrayList();
+
+    public HotelLogic(){
+    }
 
     public void rooms() {
         Room room1 = new Room(1, 2, true, 50);
@@ -39,6 +43,14 @@ public class HotelLogic {
         customerList.add(customer4);
         customerList.add(customer5);
 
+    }
+
+    public void printToText() throws IOException {
+        PrintWriter text = new PrintWriter("bookings.txt");
+        for(Booking booking : bookingList){
+            text.println(booking);
+        }
+        text.close();
     }
 
     public void showAllRooms() {

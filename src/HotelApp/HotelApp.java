@@ -93,6 +93,9 @@ public class HotelApp {
                     logic.showAllBookings();
                     break;
                 case 9:
+                    logic.printToText();
+                    break;
+                case 10:
                     running = false;
                     System.out.println("Thank you for using the services");
                     break;
@@ -105,17 +108,18 @@ public class HotelApp {
 
     public int printMenu() {
 
-        System.out.println("*____ Welcome Employer ____*");
-        System.out.println("| 1) show available rooms  |");
-        System.out.println("| 2) Add booking           |");
-        System.out.println("| 3) view all rooms        |");
-        System.out.println("| 4) View booked rooms     |");
-        System.out.println("| 5) Add customers         |");
-        System.out.println("| 6) Cancel booking        |");
-        System.out.println("| 7) Show all customers    |");
-        System.out.println("| 8) show all bookings     |");
-        System.out.println("| 9) Exit                  |");
-        System.out.println("*__________________________*");
+        System.out.println("*_______ Welcome Employer _______*");
+        System.out.println("| 1) show available rooms        |");
+        System.out.println("| 2) Add booking                 |");
+        System.out.println("| 3) view all rooms              |");
+        System.out.println("| 4) View booked rooms           |");
+        System.out.println("| 5) Add customers               |");
+        System.out.println("| 6) Cancel booking              |");
+        System.out.println("| 7) Show all customers          |");
+        System.out.println("| 8) show all bookings           |");
+        System.out.println("| 9) Print Bookings to a textfile|");
+        System.out.println("| 10) Exit                       |");
+        System.out.println("*________________________________*");
         System.out.print("> ");
         int userInput = input.nextInt();
         input.nextLine();

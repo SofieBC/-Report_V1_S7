@@ -1,8 +1,9 @@
 package HotelApp;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Booking {
+public class Booking implements Serializable {
     private static int bookingCounter = 1;
     private int bookingId;
     private Date checkInDate;
@@ -10,6 +11,10 @@ public class Booking {
     private double totalPrice;
     private String ssn;
     private Room room;
+
+    public Booking(){
+
+    }
 
     public Booking(Room room, String ssn) {
         this.bookingId = bookingCounter++;
