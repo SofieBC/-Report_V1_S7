@@ -9,6 +9,7 @@ public class Room implements Serializable {
     private double pricePerNight;
     private boolean isBooked;
     private Booking booking;
+    private boolean checkedIn;
 
     public Room(){
     }
@@ -28,6 +29,13 @@ public class Room implements Serializable {
         this.booking = booking;
     }
 
+    public boolean isCheckedIn() {
+        return checkedIn;
+    }
+
+    public void setCheckedIn(boolean checkedIn) {
+        this.checkedIn = checkedIn;
+    }
 
     public int getNumberOfBeds() {
         return numberOfBeds;
@@ -53,12 +61,13 @@ public class Room implements Serializable {
 
     @Override
     public String toString() {
-        return "Room{" +
+        return "{" +
                 "roomNumber=" + roomNumber +
                 ", numberOfBeds=" + numberOfBeds +
                 ", hasBalcony=" + hasBalcony +
                 ", pricePerNight=" + pricePerNight +
                 ", isBooked=" + isBooked +
+                ", checkedIn=" + checkedIn +
                 '}';
     }
 }

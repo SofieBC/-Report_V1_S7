@@ -10,7 +10,7 @@ public class HotelLogic implements Serializable {
     ArrayList<Customer> customerList = new ArrayList<Customer>();
     ArrayList<Booking> bookingList = new ArrayList();
 
-    public HotelLogic(){
+    public HotelLogic() {
     }
 
     public void rooms() {
@@ -45,9 +45,50 @@ public class HotelLogic implements Serializable {
 
     }
 
+    public void checkIn() {
+        Scanner input = new Scanner(System.in);
+        for (Booking booking : bookingList) {
+            System.out.println(booking);
+            for (Room room : roomList) {
+                System.out.println("What room do you want to check in?");
+                int value = input.nextInt();
+                input.nextLine();
+                if (value == room.getRoomNumber()) {
+                    room.setCheckedIn(true);
+                } else {
+                    System.out.println("no room with that number");
+                }
+                System.out.println("-- All Bookings --");
+                System.out.println(booking);
+                break;
+            }
+        }
+    }
+
+    public void checkOut(){
+        Scanner input = new Scanner(System.in);
+        for (Booking booking : bookingList) {
+            System.out.println(booking);
+            for (Room room : roomList) {
+                System.out.println("What room do you want to check out?");
+                int value = input.nextInt();
+                input.nextLine();
+                if (value == room.getRoomNumber()) {
+                    room.setCheckedIn(false);
+                } else {
+                    System.out.println("no room with that number");
+                }
+                System.out.println("-- All Bookings --");
+                System.out.println(booking);
+                break;
+            }
+        }
+
+    }
+
     public void printToText() throws IOException {
         PrintWriter text = new PrintWriter("bookings.txt");
-        for(Booking booking : bookingList){
+        for (Booking booking : bookingList) {
             text.println(booking);
         }
         text.close();
@@ -157,7 +198,7 @@ public class HotelLogic implements Serializable {
             if (!room.isBooked())
                 System.out.println(room);
         }
-        System.out.println("Enter customer ssn to book a room: ");
+        System.out.print("Enter customer ssn to book a room: ");
         String ssn = input.nextLine();
 
         for (Customer customer : customerList) {

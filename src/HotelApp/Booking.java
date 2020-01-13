@@ -36,7 +36,7 @@ public class Booking implements Serializable {
         return "Booking{" +
                 "bookingId=" + bookingId +
                 ", room='" + room + '\'' +
-                ", ssn='" + ssn + '\'' +
+                " ssn='" + ssn + '\'' +
                 '}';
     }
 }

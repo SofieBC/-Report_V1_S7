@@ -96,6 +96,12 @@ public class HotelApp {
                     logic.printToText();
                     break;
                 case 10:
+                    logic.checkIn();
+                    break;
+                case 11:
+                    logic.checkOut();
+                    break;
+                case 12:
                     running = false;
                     System.out.println("Thank you for using the services");
                     break;
@@ -118,7 +124,9 @@ public class HotelApp {
         System.out.println("| 7) Show all customers          |");
         System.out.println("| 8) show all bookings           |");
         System.out.println("| 9) Print Bookings to a textfile|");
-        System.out.println("| 10) Exit                       |");
+        System.out.println("| 10 Check in room               |");
+        System.out.println("| 11 Check out room              |");
+        System.out.println("| 12) Exit                       |");
         System.out.println("*________________________________*");
         System.out.print("> ");
         int userInput = input.nextInt();
