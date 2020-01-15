@@ -46,26 +46,30 @@ public class HotelLogic implements Serializable {
     }
 
     public void checkIn() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("-- All bookings --");
-        for (Booking booking : bookingList) {
-            System.out.println(booking);
-        }
-        System.out.print("What room do you want to check in?");
-        int value = input.nextInt();
-        input.nextLine();
-        for (Room room : roomList) {
-            if (!room.isCheckedIn()) {
-                if (value == room.getRoomNumber()) {
-                    room.setCheckedIn(true);
-                    break;
-                } else {
-                    System.out.println("no room with that number");
+        try {
+            Scanner input = new Scanner(System.in);
+            System.out.println("-- All bookings --");
+            for (Booking booking : bookingList) {
+                System.out.println(booking);
+            }
+            System.out.print("What room do you want to check in?");
+            int value = input.nextInt();
+            input.nextLine();
+            for (Room room : roomList) {
+                if (!room.isCheckedIn()) {
+                    if (value == room.getRoomNumber()) {
+                        room.setCheckedIn(true);
+                        break;
+                    } else {
+                        System.out.println("no room with that number");
+                    }
                 }
             }
-        }
-        for(Booking booking : bookingList){
-            System.out.println(booking);
+            for (Booking booking : bookingList) {
+                System.out.println(booking);
+            }
+        } catch (Exception e) {
+            System.out.println("Only Integers is allowed!");
         }
     }
 
@@ -88,7 +92,7 @@ public class HotelLogic implements Serializable {
                 }
             }
         }
-        for(Booking booking : bookingList){
+        for (Booking booking : bookingList) {
             System.out.println(booking);
         }
     }
@@ -199,6 +203,7 @@ public class HotelLogic implements Serializable {
     }
 
     public void bookRoom() {
+
         Scanner input = new Scanner(System.in);
         System.out.println("-- Available rooms --");
         for (Room room : roomList) {

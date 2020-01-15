@@ -15,51 +15,54 @@ public class HotelApp {
     }
 
     private static void handleLogin(HotelApp myApp, HotelLogic logic) throws Exception {
-        Scanner input = new Scanner(System.in);
-        boolean bool = true;
-        while (bool) {
-            System.out.println("****************************");
-            System.out.println("| HOTEL MANAGEMENT SYSTEM  |");
-            System.out.println("****************************");
-            System.out.println("*--------Login-------------*");
-            System.out.println("| 1. Login as Employer     |");
-            System.out.println("| 2. Login as Customer     |");
-            System.out.println("| 3. Exit                  |");
-            System.out.println("*--------------------------*");
-            System.out.println("****************************");
+        try {
+            Scanner input = new Scanner(System.in);
+            boolean bool = true;
+            while (bool) {
+                System.out.println("****************************");
+                System.out.println("| HOTEL MANAGEMENT SYSTEM  |");
+                System.out.println("****************************");
+                System.out.println("*--------Login-------------*");
+                System.out.println("| 1. Login as Employer     |");
+                System.out.println("| 2. Login as Customer     |");
+                System.out.println("| 3. Exit                  |");
+                System.out.println("*--------------------------*");
+                System.out.println("****************************");
 
-            System.out.print("Select option: ");
-            System.out.print("> ");
-            int choice = input.nextInt();
-            input.nextLine();
+                System.out.print("Select option: ");
+                System.out.print("> ");
+                int choice = input.nextInt();
+                input.nextLine();
 
-            switch (choice) {
-                case 1:
-                    System.out.print("Enter Password: ");
-                    String password = input.nextLine();
-                    if (password.equals("Admin")) {
-                        myApp.runProgram(logic);
-                    } else {
-                        System.out.println("Wrong password, try again.");
-                    }
-                    break;
-                case 2:
-                    System.out.print("Enter Password: ");
-                    String password2 = input.nextLine();
-                    if (password2.equals("Customer")) {
-                        myApp.runProgram2(logic);
-                    } else {
-                        System.out.println("Wrong password, try again.");
-                    }
-                    break;
-                case 3:
-                    System.out.println("Have a nice day!");
-                    bool = false;
-                    break;
-                default:
-                    System.out.println("please choose between 1-3");
-
+                switch (choice) {
+                    case 1:
+                        System.out.print("Enter Password: ");
+                        String password = input.nextLine();
+                        if (password.equals("Admin")) {
+                            myApp.runProgram(logic);
+                        } else {
+                            System.out.println("Wrong password, try again.");
+                        }
+                        break;
+                    case 2:
+                        System.out.print("Enter Password: ");
+                        String password2 = input.nextLine();
+                        if (password2.equals("Customer")) {
+                            myApp.runProgram2(logic);
+                        } else {
+                            System.out.println("Wrong password, try again.");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Have a nice day!");
+                        bool = false;
+                        break;
+                    default:
+                        System.out.println("please choose between 1-3");
+                }
             }
+        } catch (Exception e) {
+            System.out.println("Only Integers is allowed!");
         }
     }
 
